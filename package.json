@@ -1,0 +1,40 @@
+{
+  "name": "stephanie-rentfrow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watchStyles": "sass --watch src/scss:dist/styles"
+  },
+  "author": "Stephanie Rentfrow",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "browser-sync": "^2.27.7",
+    "cssnano": "^5.0.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-merge": "^0.1.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sequence": "^1.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "merge-stream": "^2.0.0",
+    "postcss-cli": "^9.1.0",
+    "run-sequence": "^2.2.1",
+    "sass": "^1.45.0",
+    "stylelint": "^14.1.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.1.3",
+    "gulp-sass": "^5.0.0",
+    "jquery": "^3.6.0"
+  }
+}

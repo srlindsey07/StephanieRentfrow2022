@@ -1,0 +1,34 @@
+$color-primary-dark: #5f4851;
+$color-primary-med: #a88797;
+$color-primary-light: #c7bbbf;
+$color-primary-xlight: #d8d6d7;
+$color-background: #fffbf8;
+
+$color-accent-1: #f499b6;
+$color-accent-2: #80d2e9;
+$color-accent-3: #f7dda5;
+$color-accent-4: #a6dbd5;
+
+@mixin font-body-light {
+  font-family: termina,sans-serif;
+  font-weight: 300 !important;
+}
+
+@mixin font-body-normal {
+  font-family: termina,sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-body-medium {
+  font-family: termina,sans-serif;
+  font-weight: 500;
+}
+
+@mixin font-body-demi {
+  font-family: termina,sans-serif;
+  font-weight: 600 !important;
+}
+
+@mixin box-shadow {
+  box-shadow: 0 0 12px 1px rgba(0,0,0,0.2);
+}
