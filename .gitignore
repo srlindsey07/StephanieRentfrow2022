@@ -1,0 +1,6 @@
+# omit checking in the node_modules/ directory
+node_modules/
+
+# omit checking in the compiled output of the dist/ directory
+dist/
+
