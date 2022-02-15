@@ -16,7 +16,7 @@ const paths = {
         js: './src/js/*.js',
         assets: ['./src/assets/**', '!./src/assets/*.psd'],
         html: './src/*.html',
-        fonts: './src/fonts/**'
+        fonts: ['./src/fonts/**', './node_modules/@fortawesome/fontawesome-free/webfonts/**']
     },
     dist: {
         all: './dist/**',
@@ -77,6 +77,10 @@ function copyAssets() {
     return assetsCopy;
 }
 
+function copyFonts() {
+    return src(paths.working.fonts).pipe(dest(paths.dist.fonts));
+}
+
 function reload(done) {
     browserSync.reload();
     done();
@@ -95,8 +99,8 @@ function watchFiles() {
     watch(paths.working.assets, reload);
 }
 
-const buildFiles = series(cleanDist, parallel(copyHtml, copyAssets, styles, scripts));
-const serveFiles = series(cleanDist, copyHtml, copyAssets, styles, scripts, watchFiles);
+const buildFiles = series(cleanDist, parallel(copyHtml, copyAssets, styles, scripts, copyFonts));
+const serveFiles = series(cleanDist, copyHtml, copyAssets, copyFonts, styles, scripts, watchFiles);
 // const serveFiles = series(cleanDist, parallel(copyFiles, styles, scripts), watchFiles);
 
 exports.build = buildFiles;
