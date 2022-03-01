@@ -33,6 +33,9 @@ function cleanDist(done) {
     done();
 }
 
+/**
+ * compile and copy styles to dist folder
+ */
 function styles() {
     const files = [
         paths.working.scss
@@ -49,6 +52,9 @@ function styles() {
         .pipe(browserSync.stream());
 }
 
+/**
+ * compile and copy scripts to dist folder
+ */
 function scripts() {
     const files = [
         './node_modules/jquery/dist/jquery.slim.js',
@@ -62,23 +68,30 @@ function scripts() {
         .pipe(browserSync.stream());
 }
 
-// HOW CAN I COMBINE THESE 2 INTO ONE FUNCTION? APPARENTLY MERGESTREAM DOES NOT LIKE
-// BEING INSIDE A SERIES.... WHAT A DIVA!
+/**
+ * copy html files to dist folder
+ */
 function copyHtml() {
-    const htmlCopy = src(paths.working.html).pipe(dest(paths.dist.html));
-    // const assetsCopy = src(paths.working.assets).pipe(dest(paths.dist.assets));
-
-    return htmlCopy;
+    return src(paths.working.html)
+        .pipe(dest(paths.dist.html))
+        .pipe(browserSync.stream());
 }
+
+/**
+ * copy assets to dist folder
+ */
 function copyAssets() {
-    // const htmlCopy = src(paths.working.html).pipe(dest(paths.dist.html));
-    const assetsCopy = src(paths.working.assets).pipe(dest(paths.dist.assets));
-
-    return assetsCopy;
+    return src(paths.working.assets)
+        .pipe(dest(paths.dist.assets))
+        .pipe(browserSync.stream());
 }
 
+/**
+ * copy fonts to dist folder
+ */
 function copyFonts() {
-    return src(paths.working.fonts).pipe(dest(paths.dist.fonts));
+    return src(paths.working.fonts)
+        .pipe(dest(paths.dist.fonts));
 }
 
 function reload(done) {
@@ -95,19 +108,17 @@ function watchFiles() {
 
     watch(paths.working.scss, series(styles, reload));
     watch(paths.working.js, series(scripts, reload));
-    watch(paths.working.html, reload);
-    watch(paths.working.assets, reload);
+    watch(paths.working.html, series(copyHtml, reload));
+    watch(paths.working.assets, series(copyAssets, reload));
 }
 
 const buildFiles = series(cleanDist, parallel(copyHtml, copyAssets, styles, scripts, copyFonts));
 const serveFiles = series(cleanDist, copyHtml, copyAssets, copyFonts, styles, scripts, watchFiles);
-// const serveFiles = series(cleanDist, parallel(copyFiles, styles, scripts), watchFiles);
 
 exports.build = buildFiles;
 exports.serve = serveFiles;
 
 exports.clean = cleanDist;
-// exports.copy = copyFiles;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.watch = watchFiles;

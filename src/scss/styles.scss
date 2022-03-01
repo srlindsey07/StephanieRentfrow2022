@@ -33,7 +33,7 @@ h2 {
 h3 {
   @include font-body-medium();
   color: $color-primary-dark;
-  font-size: 1.1rem;
+  font-size: $font-h3-size;
 }
 
 h4 {
@@ -148,7 +148,7 @@ section {
 .header {
   $nav-height: 60px;
 
-  background-image: url('./dist/assets/RainbowSwirlBackground.jpg');
+  background-image: url('../assets/RainbowSwirlBackground.jpg');
   background-size: cover;
   height: 66vh;
   position: relative;
@@ -182,7 +182,6 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 0;
 
     h1 {
       @include font-body-light();
@@ -244,12 +243,61 @@ section {
     margin: 0 !important;
   }
 
-  article {
-    margin-bottom: 2rem;
+  article:not(:last-child) {
+    padding-bottom: 2rem;
   }
 
   .skill-list {
     margin-top: 0;
+    padding-left: 1rem;
+  }
+
+  .timeline {
+    $timeline-spacing: 20px;
+    $timeline-border-size: 2px;
+
+    article {
+      position: relative;
+      border-left: $timeline-border-size solid $color-primary-light;
+      padding-left: $timeline-spacing;
+
+      h3 {
+        line-height: $font-h3-size;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+      }
+
+      // stop
+      &:first-child {
+        $timeline-stop-size: 14px;
+
+        &:before {
+          width: $timeline-stop-size;
+          height: $timeline-stop-size;
+          border-radius: 50%;
+          background-color: $color-primary-med;
+          left: (($timeline-stop-size * 0.5) + ($timeline-border-size * 0.5)) * -1;
+        }
+      }
+
+      // arrows
+      &:not(:first-child) {
+        $timeline-arrow-size: 10px;
+        $timeline-arrow-thickness: 3px;
+
+        &:before {
+          width: 0;
+          height: 0;
+          border-left: $timeline-arrow-size solid transparent;
+          border-right: $timeline-arrow-size solid transparent;
+          border-top: ($timeline-arrow-size * 1.25) solid $color-primary-med;
+          left: (($timeline-arrow-size) + ($timeline-border-size * 0.5)) * -1;
+        }
+      }
+    }
   }
 
   &:after {
