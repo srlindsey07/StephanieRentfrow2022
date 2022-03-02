@@ -27,13 +27,15 @@ h1 {
 h2 {
   @include font-body-medium();
   color: $color-primary-dark;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
   @include font-body-medium();
   color: $color-primary-dark;
   font-size: $font-h3-size;
+  margin-bottom: 0.25rem;
 }
 
 h4 {
@@ -65,32 +67,50 @@ a {
   color: $color-primary-dark;
 }
 
-.btn-default {
-  background-color: rgba($color-primary-xlight, 0.5);
-  border: 1px solid $color-primary-dark;
+.btn {
+  text-align: center;
   padding: 0.35rem 1.5rem;
   text-decoration: none;
-  text-align: center;
   font-size: 1rem !important;
+}
+
+.btn-default {
+  background-color: $color-primary-xxlight;
+  border: 1px solid $color-primary-dark;
   transition: background-color 200ms;
 
   &:hover, &:focus {
-    background-color: rgba($color-primary-light, 0.7);
+    background-color: $color-primary-xlight;
+    transition: background-color 200ms;
+  }
+}
+
+.btn-primary {
+  background-color: $color-primary-dark;
+  color: #fff;
+
+  .fas {
+    color: #fff;
+  }
+
+  &:hover, &:focus {
+    background-color: rgba($color-primary-med, 0.7);
     transition: background-color 200ms;
   }
 }
 
 .btn-round {
+  $btn-round-size: 60px;
+
   @include box-shadow();
-  background-color: $color-primary-dark;
-  color: #fff;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
+  width: $btn-round-size;
+  height: $btn-round-size;
+  line-height: $btn-round-size * 0.33;
   text-align: center;
   border-radius: 50%;
   border: none;
   font-size: 1rem !important;
+  padding: .2rem;
 }
 
 .container-fluid {
@@ -122,18 +142,12 @@ section {
     padding: 2rem 0;
   }
 
-  &.section-border {
-    border-bottom: 4px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(to right, $color-accent-1, $color-accent-2);
-  }
-
   &.section-gradient {
     position: relative;
 
     &:after {
       content: '';
-      background-image: linear-gradient(150deg, $color-accent-1, $color-accent-2, $color-accent-3);
+      background-image: linear-gradient(150deg, $color-accent-1, $color-accent-2, $color-accent-3) !important;
       background-size: cover;
       opacity: 0.15;
       height: 100%;
@@ -145,10 +159,17 @@ section {
   }
 }
 
+.section-border {
+  border-bottom: 4px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, $color-accent-1, $color-accent-2);
+}
+
 .header {
   $nav-height: 60px;
 
   background-image: url('../assets/RainbowSwirlBackground.jpg');
+  background-color: $color-background;
   background-size: cover;
   height: 66vh;
   position: relative;
@@ -156,24 +177,83 @@ section {
   nav {
     @include box-shadow();
     display: flex;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.4);
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.6);
     border-bottom: 2px solid $color-primary-med;
-    padding: 0 $grid-gutter-width;
+    padding: 0.75rem $grid-gutter-width;
     height: $nav-height;
 
     .logo {
       height: 25px;
       width: auto;
+      margin-top: 5px;
+    }
+
+    .btn-toggle {
+      margin-left: auto;
+      background: transparent;
+      border: none;
+
+      .fas {
+        font-size: 1.75rem;
+      }
+    }
+
+    @keyframes animate-menu-open {
+      from {
+        height: 0;
+        max-height: 0;
+      }
+      to {
+        height: auto;
+        max-height: 600px;
+      }
     }
 
     .nav-links {
       margin-left: auto;
-      display: flex;
+      margin-top: 0;
+      margin-bottom: 0;
+      display: none;
       list-style: none;
+
+      @include media-breakpoint-up(md) {
+        display: flex;
+      }
 
       a {
         padding: 5px 15px;
+      }
+
+      &.open {
+        @include box-shadow();
+        display: block;
+        background-color: $color-background;
+        flex-basis: 100%;
+        flex-grow: 1;
+        z-index: 9;
+        padding: 1rem;
+        height: auto;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        margin-top: 12px;
+        overflow: hidden;
+
+        animation-name: animate-menu-open;
+        animation-duration: 0.3s;
+
+        a {
+          display: block;
+          margin: 5px 0;
+        }
+      }
+
+      &.closed {
+        height: 0;
+        animation-name: animate-menu-open;
+        animation-duration: 1s;
+        animation-direction: reverse;
       }
     }
   }
@@ -220,27 +300,34 @@ section {
 }
 
 #about {
-  .profile-image {
-    @include box-shadow();
-    width: 75%;
-    height: auto;
-    border-radius: 50%;
+  .about-content {
+    flex-direction: column;
+    align-items: center;
 
     @include media-breakpoint-up(md) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .profile-image {
+      @include box-shadow();
       width: 100%;
+      height: auto;
+      border-radius: 50%;
     }
   }
 }
 
 #resume {
   position: relative;
+  overflow: hidden;
 
-  .container {
+  .resume-content {
     position: relative;
   }
 
   h2, h3, h4 {
-    margin: 0 !important;
+    margin-top: 0 !important;
   }
 
   article:not(:last-child) {
@@ -300,11 +387,17 @@ section {
     }
   }
 
+  .pdf-btn {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+  }
+
   &:after {
     content: '';
     background-image: linear-gradient(210deg, $color-accent-3, $color-accent-2);
-    -webkit-mask: url('../../src/assets/TransparentWhiteInfinitySwirl.png') no-repeat;
-    mask: url('../../src/assets/TransparentWhiteInfinitySwirl.png') no-repeat;
+    -webkit-mask: url('../assets/TransparentWhiteInfinitySwirl.png') no-repeat;
+    mask: url('../assets/TransparentWhiteInfinitySwirl.png') no-repeat;
     -webkit-mask-size: 100%;
     mask-size: 100%;
     position: absolute;
@@ -321,10 +414,17 @@ section {
   .contact-links {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     .btn-default {
-      margin: 0 1.25rem;
+      display: block;
+      margin: 1rem 1.25rem;
       min-width: 150px;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
     }
 
   }

@@ -2,232 +2,227 @@
 <html lang="en">
 <head>
     <title>Stephanie Rentfrow</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="stylesheet" href="https://use.typekit.net/cyw0ahi.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.min.css">
 </head>
 
 <body>
-    <div class="container-fluid">
-        <!-- header -->
-        <section class="header section-border">
-            <nav>
-                <img src="assets/StephanieRentfrowLogo.svg" class="logo" alt="Stephanie Rentfrow">
+<div class="container-fluid">
+    <!-- header -->
+    <div class="header section-border">
+        <nav>
+            <img src="assets/StephanieRentfrowLogo.svg" class="logo" alt="Stephanie Rentfrow">
 
-                <button type="button" class="d-block d-md-none">
-                    <i class="fas fa-bars" title="Toggle Menu"></i> T
-                </button>
+            <button id="menu_toggle" type="button" class="btn-toggle d-block d-md-none" title="Menu Toggle">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
 
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <ul id="menu" class="nav-links closed">
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-            <div class="header-content">
-                <img src="./assets/StephanieRentfrowSwirlLogo.svg" class="hero-img" alt="Stephanie Rentfrow">
-                <h1>Front End Developer</h1>
+        <header class="header-content">
+            <img src="./assets/StephanieRentfrowSwirlLogo.svg" class="hero-img" alt="Stephanie Rentfrow">
+            <h1>Front End Developer</h1>
 
 
-                <ul class="header-links unstyled-list horizontal-list">
-                    <li><a href="#about" class="btn-default">About</a></li>
-                    <li><a href="#resume" class="btn-default">Resume</a></li>
-                    <li><a href="#contact" class="btn-default">Contact</a></li>
-                </ul>
-            </div>
-        </section>
+            <ul class="header-links unstyled-list horizontal-list">
+                <li><a href="#about" class="btn btn-default">About</a></li>
+                <li><a href="#resume" class="btn btn-default">Resume</a></li>
+                <li><a href="#contact" class="btn btn-default">Contact</a></li>
+            </ul>
+        </header>
+    </div>
 
-        <section id="about" class="section-border section-gradient">
-            <div class="container">
-                <h1>About</h1>
+    <section id="about" class="section-border section-gradient">
+        <div class="container">
+            <h1>About</h1>
 
-                <div class="row">
-                    <div class="col-md-4 col-lg-3 text-center">
-                        <img src="./assets/ProfileImage.jpeg" class="profile-image">
-                    </div>
+            <div class="row about-content">
+                <div class="col-6 col-md-4 col-lg-3 text-center">
+                    <img src="./assets/ProfileImage.jpeg" class="profile-image" alt="" aria-hidden="true">
+                </div>
 
-                    <div class="col-md-8 col-lg-9">
-                        <p>I am Stephanie Rentfrow and I was born and raised in Gainesville, Florida. Growing up, I
-                            always wanted to be a Graphic Designer and that's exactly what I went to school for
-                            after graduating from high school. During my studies for my Digital Media Technology
-                            degree at Santa Fe College, I interned as a Graphic Designer at MediaEDGE Communications.
-                            As soon as my internship ended the company hired me and eventually started giving me
-                            tasks that required me to learn HTML and CSS. This is when I discovered how much I enjoy
-                            developing user interfaces.</p>
-                        <p>Eventually, Mindtree Limited offered to help me hone the skills that I started to teach
-                            myself by offering me a Junior Software Engineer position so that I could learn to
-                            develop on the job. Over the years, I have proven myself to be dedicated, determined and
-                            eager to learn. To say that I have been fortunate during my career would be an
-                            understatement.</p>
-                    </div>
+                <div class="col-md-8 col-lg-9">
+                    <p>I am Stephanie Rentfrow and I was born and raised in Gainesville, Florida. Growing up, I always
+                        wanted to be a Graphic Designer. In pursuit of my dreams, I attended Santa Fe College majoring
+                        in Digital Media Technology. During my time in Santa Fe College, I interned as a Graphic
+                        Designer at MediaEDGE Communications. When my internship ended, the company hired me as a
+                        a full time Graphic Designer. During my tenure there, MediaEDGE Communications allowed me to
+                        grow professionally by giving me tasks that required me to learn HTML and CSS. This is when I
+                        discovered how much I enjoy developing user interfaces and fell in love with helping to
+                        enhance the overall user experience.
+                    </p>
+                    <p>Eventually, Mindtree Limited offered to help me hone the skills that I started to teach
+                        myself by offering me a Junior Software Engineer position so that I could learn to
+                        develop on the job. Over the years, I have proven myself to be dedicated, determined and
+                        eager to learn. To say that I have been fortunate during my career would be an
+                        understatement.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="resume" class="section-border">
-            <div class="container">
-                <h1>Resume</h1>
+    <section id="resume" class="section-border">
+        <div class="container resume-content">
+            <h1>Resume</h1>
 
-                <div class="row mb-5">
-                    <div class="col-md-2">
-                        <h2>Skills and Technologies</h2>
-                    </div>
-
-                    <div class="col-md-10 columns-2">
-                        <h3>Technology</h3>
-                        <ul class="unstyled-list skill-list">
-                            <li>HTML5 / CSS3</li>
-                            <li>Sass / Less</li>
-                            <li>Javascript / jQuery</li>
-                            <li>Boostrap</li>
-                            <li>Angular Material</li>
-                            <li>Angular 2</li>
-                            <li>Jira / BitBucket / Confluence</li>
-                            <li>Git</li>
-                            <li>Node</li>
-                            <li>Adobe Illustrator, Photoshop and InDesign</li>
-                        </ul>
-
-                        <h3>Concepts</h3>
-                        <ul class="unstyled-list skill-list">
-                            <li>Responsive Layout and Design</li>
-                            <li>Cross-Browser Compatibility</li>
-                            <li>Web Accessibility</li>
-                            <li>Agile Methodology</li>
-                        </ul>
-                    </div>
+            <div class="row mb-5">
+                <div class="col-lg-3">
+                    <h2>Skills and Technologies</h2>
                 </div>
 
-                <div class="row mb-5">
-                    <div class="col-md-2">
-                        <h2>Experience</h2>
-                    </div>
+                <div class="col-lg-9 columns-2">
+                    <h3>Technology</h3>
+                    <ul class="unstyled-list skill-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Sass / Less</li>
+                        <li>Javascript / jQuery</li>
+                        <li>Bootstrap</li>
+                        <li>Angular 2</li>
+                        <li>Angular Material</li>
+                        <li>Selenium</li>
+                        <li>Jira / BitBucket / Confluence</li>
+                        <li>Git</li>
+                        <li>Node</li>
+                        <li>Adobe Illustrator, Photoshop and InDesign</li>
+                    </ul>
 
-                    <div class="col-md-10 timeline">
-                        <article>
-                            <h3>Software Developer II</h3>
-                            <h4>Modivcare, Jacksonville, FL<br>October 2016 - Present (5+ years)</h4>
-                            <ul>
-                                <li>Scrum Master and front end developer for a team that creates an application for
-                                    medical facilities to request trips for their patients (Members).</li>
-                                <li>Develop user interfaces that are responsive and meet WCAG 2.1 AA accessibility
-                                    guidelines.</li>
-                                <li>Preserve good coding standards while delivering functionality in an Agile
-                                    environment.</li>
-                                <li>Maintain the company's employee portal and several informational sites for
-                                    Members to find documents and answers to frequently asked questions.</li>
-                            </ul>
-                        </article>
-
-                        <article>
-                            <h3>Software Engineer</h3>
-                            <h4>Mindtree Limited, Gainesville, FL<br>December 2011 - October 2016 (2 years, 10 months)</h4>
-                            <ul>
-                                <li>Developed responsive user interfaces for multiple large name companies.</li>
-                                <li>Produced high ﬁdelity software prototypes to allow clients to interact with a
-                                    working product.</li>
-                                <li>Assisted with UI/UX designs, mockups and decisions.</li>
-                            </ul>
-
-                        </article>
-
-                        <article>
-                            <h3>Graphic Designer</h3>
-                            <h4>MediaEDGE Communications, Gainesville, FL<br>December 2011 - December 2013 (2 years)</h4>
-                            <ul>
-                                <li>Designed professional magazine and directory layouts for many associations.
-                                    Layouts included advertisement design and placement.</li>
-                                <li>Developed and distributed association email newsletters.</li>
-                                <li>Maintained association websites through a content management system.</li>
-                            </ul>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="row mb-5">
-                    <div class="col-md-2">
-                        <h2>Awards and Recognition</h2>
-                    </div>
-
-                    <div class="col-md-10">
-                        <article>
-                            <h3>2021 (Third and Fourth Quarter) Modivcare Awards</h3>
-                            <p>Nominated by peers and managers to receive an award for going above and beyond in the job and representing the company's core values well.</p>
-                            <ul>
-                                <li>Presented to a large client in order to help leadership.</li>
-                                <li>Being very detailed, having a pleasant attitude and always being willing to help.</li>
-                            </ul>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-2">
-                        <h2>Education</h2>
-                    </div>
-
-                    <div class="col-md-10">
-                        <article>
-                            <h3>Associate of Science in Digital Media Technology</h3>
-                            <h4>Santa Fe College, Gainesville, FL</h4>
-                            <p>Graduated Spring 2012</p>
-                        </article>
-
-                        <article>
-                            <h3>Associate of Arts in Business Administration</h3>
-                            <h4>Santa Fe College, Gainesville, FL</h4>
-                            <p>Graduated Spring 2010</p>
-                        </article>
-                    </div>
-                </div>
-
-                <button type="button" class="btn-default">
-                    <i class="fas fa-download"></i> PDF
-                </button>
-            </div>
-        </section>
-
-        <section id="contact" class="section-border section-gradient">
-            <div class="container">
-                <h1>Contact and Information</h1>
-
-                <div class="card">
-    <!--                <form>-->
-    <!--                    <div class="mb-4">-->
-    <!--                        <label for="contactName">Name</label>-->
-    <!--                        <input type="text" id="contactName">-->
-    <!--                    </div>-->
-
-    <!--                    <div class="mb-4">-->
-    <!--                        <label for="contactEmail">Email</label>-->
-    <!--                        <input type="text" id="contactEmail">-->
-    <!--                    </div>-->
-
-    <!--                    <div class="mb-4">-->
-    <!--                        <label for="contactMessage">Message</label>-->
-    <!--                        <textarea id="contactMessage" rows="3"></textarea>-->
-    <!--                    </div>-->
-
-    <!--                    <button class="btn-default">Submit</button>-->
-    <!--                </form>-->
-                    <ul class="contact-links unstyled-list horizontal-list">
-                        <li><a href="mailto:stephanie.rentfrow@gmail.com" class="btn-default">Email</a></li>
-                        <li><a href="https://www.linkedin.com/in/stephanie-rentfrow-a54940b7" target="_blank" rel="noreferrer noopener" class="btn-default">LinkedIn</a></li>
-                        <li><a href="https://github.com/srlindsey07" target="_blank" rel="noreferrer noopener" class="btn-default">GitHub</a></li>
+                    <h3>Concepts</h3>
+                    <ul class="unstyled-list skill-list">
+                        <li>Responsive Layout and Design</li>
+                        <li>Cross-Browser Compatibility</li>
+                        <li>Web Accessibility</li>
+                        <li>Agile Methodology</li>
                     </ul>
                 </div>
             </div>
-        </section>
 
-        <footer>
-            Copyright &copy; <span id="currentYear"></span> Stephanie Rentfrow
-        </footer>
-    </div>
+            <div class="row mb-5">
+                <div class="col-lg-3">
+                    <h2>Experience</h2>
+                </div>
 
-    <!--<script src="../node_modules/jquery/dist/jquery.slim.js"></script>-->
-    <script src="./js/scripts.min.js"></script>
+                <div class="col-lg-9 timeline">
+                    <article>
+                        <h3>Software Developer II</h3>
+                        <h4>Modivcare, Jacksonville, FL<br>October 2016 - Present (5+ years)</h4>
+                        <ul>
+                            <li>Scrum Master and front end developer for a team that creates an application for
+                                medical facilities to request trips for their patients (Members).
+                            </li>
+                            <li>Develop user interfaces that are responsive and meet WCAG 2.1 AA accessibility
+                                guidelines.
+                            </li>
+                            <li>Preserve good coding standards while delivering functionality in an Agile
+                                environment.
+                            </li>
+                            <li>Maintain the company's employee portal and several informational sites for
+                                Members to find documents and answers to frequently asked questions.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>Software Engineer</h3>
+                        <h4>Mindtree Limited, Gainesville, FL<br>December 2011 - October 2016 (2 years, 10 months)</h4>
+                        <ul>
+                            <li>Developed responsive user interfaces for multiple large name companies.</li>
+                            <li>Produced high ﬁdelity software prototypes to allow clients to interact with a
+                                working product.
+                            </li>
+                            <li>Assisted with UI/UX designs, mockups and decisions.</li>
+                        </ul>
+
+                    </article>
+
+                    <article>
+                        <h3>Graphic Designer</h3>
+                        <h4>MediaEDGE Communications, Gainesville, FL<br>December 2011 - December 2013 (2 years)</h4>
+                        <ul>
+                            <li>Designed professional magazine and directory layouts for many associations.
+                                Layouts included advertisement design and placement.
+                            </li>
+                            <li>Developed and distributed association email newsletters.</li>
+                            <li>Maintained association websites through a content management system.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-lg-3">
+                    <h2>Awards and Recognition</h2>
+                </div>
+
+                <div class="col-lg-9">
+                    <article>
+                        <h3>2021 (Third and Fourth Quarter) Modivcare Awards</h3>
+                        <p>Nominated by peers and managers to receive an award for going above and beyond in the job and
+                            representing the company's core values well.</p>
+                        <ul>
+                            <li>Presented to a large client in order to help leadership.</li>
+                            <li>Being very detailed, having a pleasant attitude and always being willing to help.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <h2>Education</h2>
+                </div>
+
+                <div class="col-lg-9">
+                    <article>
+                        <h3>Associate of Science in Digital Media Technology</h3>
+                        <h4>Santa Fe College, Gainesville, FL</h4>
+                        <p>Graduated Spring 2012</p>
+                    </article>
+
+                    <article>
+                        <h3>Associate of Arts in Business Administration</h3>
+                        <h4>Santa Fe College, Gainesville, FL</h4>
+                        <p>Graduated Spring 2010</p>
+                    </article>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-round pdf-btn">
+                <i class="fas fa-download"></i> PDF
+            </button>
+        </div>
+    </section>
+
+    <section id="contact" class="section-border section-gradient">
+        <div class="container">
+            <h1>Contact and Information</h1>
+
+            <div class="card">
+                <ul class="contact-links unstyled-list horizontal-list">
+                    <li><a href="mailto:stephanie.rentfrow@gmail.com" class="btn btn-default">Email</a></li>
+                    <li><a href="https://www.linkedin.com/in/stephanie-rentfrow-a54940b7" target="_blank"
+                           rel="noreferrer noopener" class="btn btn-default">LinkedIn</a></li>
+                    <li><a href="https://github.com/srlindsey07" target="_blank" rel="noreferrer noopener"
+                           class="btn btn-default">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Copyright &copy; <span id="currentYear"></span> Stephanie Rentfrow
+    </footer>
+</div>
+
+<!--<script src="../node_modules/jquery/dist/jquery.slim.js"></script>-->
+<script src="./js/scripts.min.js"></script>
 </body>
 </html>

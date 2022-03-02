@@ -5,6 +5,7 @@ $color-primary-dark: #5f4851;
 $color-primary-med: #a88797;
 $color-primary-light: #c7bbbf;
 $color-primary-xlight: #d8d6d7;
+$color-primary-xxlight: #eaeaea;
 $color-background: #fffbf8;
 
 $color-accent-1: #f499b6;
@@ -12,7 +13,7 @@ $color-accent-2: #80d2e9;
 $color-accent-3: #f7dda5;
 $color-accent-4: #a6dbd5;
 
-$font-h3-size: 1.1rem;
+$font-h3-size: 1.25rem;
 
 @mixin font-body-light {
   font-family: termina,sans-serif;
