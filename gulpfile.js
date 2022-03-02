@@ -1,13 +1,11 @@
 const { src, dest, series, parallel, watch } = require('gulp');
 const del = require('del');
 const sass = require('gulp-sass')(require('sass'));
-const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const uglify = require('gulp-uglify');
-const mergeStream = require('merge-stream');
 const browserSync = require('browser-sync').create();
 
 const paths = {
