@@ -78,6 +78,15 @@ function copyHtml() {
 }
 
 /**
+ * copy CNAME file to dist folder
+ */
+function copyCname() {
+    return src('./src/CNAME')
+        .pipe(dest(paths.dist.html))
+        .pipe(browserSync.stream());
+}
+
+/**
  * copy assets to dist folder
  */
 function copyAssets() {
@@ -112,13 +121,8 @@ function watchFiles() {
     watch(paths.working.assets, series(copyAssets, reload));
 }
 
-const buildFiles = series(cleanDist, parallel(copyHtml, copyAssets, styles, scripts, copyFonts));
-const serveFiles = series(cleanDist, copyHtml, copyAssets, copyFonts, styles, scripts, watchFiles);
+const buildFiles = series(cleanDist, parallel(copyHtml, copyCname, copyAssets, styles, scripts, copyFonts));
+const serveFiles = series(cleanDist, copyHtml, copyCname, copyAssets, copyFonts, styles, scripts, watchFiles);
 
 exports.build = buildFiles;
 exports.serve = serveFiles;
-
-exports.clean = cleanDist;
-exports.styles = styles;
-exports.scripts = scripts;
-exports.watch = watchFiles;
