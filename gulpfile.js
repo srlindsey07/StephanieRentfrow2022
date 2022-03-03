@@ -13,7 +13,7 @@ const paths = {
         scss: './src/scss/*.scss',
         js: './src/js/*.js',
         assets: ['./src/assets/**', '!./src/assets/*.psd'],
-        html: './src/*.html',
+        html: ['./src/*.html', './src/favicon.ico'],
         fonts: ['./src/fonts/**', './node_modules/@fortawesome/fontawesome-free/webfonts/**']
     },
     dist: {
