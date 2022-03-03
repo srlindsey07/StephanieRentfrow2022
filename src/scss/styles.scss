@@ -18,7 +18,7 @@ body {
 
 h1 {
   @include font-body-demi();
-  color: $color-primary-dark;
+  color: $color-primary-xdark;
   text-align: center;
   font-size: 2rem;
   margin-top: 0;
@@ -26,14 +26,14 @@ h1 {
 
 h2 {
   @include font-body-medium();
-  color: $color-primary-dark;
+  color: $color-primary-xdark;
   font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
 h3 {
   @include font-body-medium();
-  color: $color-primary-dark;
+  color: $color-primary-xdark;
   font-size: $font-h3-size;
   margin-bottom: 0.25rem;
 }
@@ -64,7 +64,7 @@ ul {
 }
 
 a {
-  color: $color-primary-dark;
+  color: $color-primary-xdark;
 }
 
 .btn {
@@ -76,7 +76,7 @@ a {
 
 .btn-default {
   background-color: $color-primary-xxlight;
-  border: 1px solid $color-primary-dark;
+  border: 1px solid $color-primary-xdark;
   transition: background-color 200ms;
 
   &:hover, &:focus {
@@ -86,7 +86,7 @@ a {
 }
 
 .btn-primary {
-  background-color: $color-primary-dark;
+  background-color: $color-primary-xdark;
   color: #fff;
 
   .fas {
@@ -94,7 +94,7 @@ a {
   }
 
   &:hover, &:focus {
-    background-color: rgba($color-primary-med, 0.7);
+    background-color: $color-primary-dark;
     transition: background-color 200ms;
   }
 }
@@ -125,14 +125,14 @@ a {
 
 label {
   @include font-body-medium();
-  color: $color-primary-dark;
+  color: $color-primary-xdark;
 }
 
 input, textarea {
   width: 100%;
   background-color: rgba($color-primary-xlight, 0.3);
   border: none;
-  border-bottom: 1px solid $color-primary-dark;
+  border-bottom: 1px solid $color-primary-xdark;
   padding: 0.35rem 0.5rem;
   font-size: 1rem;
 }
@@ -179,10 +179,19 @@ section {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba($color-background, 0.95);
+    transition: background-color 0.7s ease-in;
     border-bottom: 2px solid $color-primary-med;
     padding: 0.75rem $grid-gutter-width;
     height: $nav-height;
+    position: fixed;
+    width: 100%;
+    z-index: 8;
+
+    &.top {
+      background-color: rgba($color-background, 0.6);
+      transition: background-color 0.7s ease-in;
+    }
 
     .logo {
       height: 25px;
@@ -262,10 +271,11 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 4rem 0 1rem 0;
 
     h1 {
       @include font-body-light();
-      color: $color-primary-dark;
+      color: $color-primary-xdark;
       font-size: 2rem;
       margin: 0.5rem 0;
     }
@@ -279,7 +289,7 @@ section {
         @include box-shadow();
         display: block;
         margin: 0 1.25rem 1rem 1.25rem;
-        width: 140px;
+        width: 145px;
       }
     }
   }
@@ -391,6 +401,9 @@ section {
     position: absolute;
     bottom: 0;
     right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &:after {
@@ -431,7 +444,7 @@ section {
 }
 
 footer {
-  background-color: $color-primary-dark;
+  background-color: $color-primary-xdark;
   color: #fff !important;
   padding: 0.5rem $grid-gutter-width;
 

@@ -13,15 +13,16 @@
 <div class="container-fluid">
     <!-- header -->
     <div class="header section-border">
-        <nav>
+        <nav class="main-nav top">
             <img src="assets/StephanieRentfrowLogo.svg" class="logo" alt="Stephanie Rentfrow">
 
-            <button id="menu_toggle" type="button" class="btn-toggle d-block d-md-none" title="Menu Toggle">
+            <button id="menu_toggle" type="button" class="btn-toggle d-block d-md-none" aria-label="Menu Toggle"
+                    aria-controls="menu" aria-expanded="false">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
 
             <ul id="menu" class="nav-links closed">
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">About Me</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -33,7 +34,7 @@
 
 
             <ul class="header-links unstyled-list horizontal-list">
-                <li><a href="#about" class="btn btn-default">About</a></li>
+                <li><a href="#about" class="btn btn-default">About Me</a></li>
                 <li><a href="#resume" class="btn btn-default">Resume</a></li>
                 <li><a href="#contact" class="btn btn-default">Contact</a></li>
             </ul>
@@ -42,7 +43,7 @@
 
     <section id="about" class="section-border section-gradient">
         <div class="container">
-            <h1>About</h1>
+            <h1>About Me</h1>
 
             <div class="row about-content">
                 <div class="col-6 col-md-4 col-lg-3 text-center">
@@ -195,9 +196,10 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn-primary btn-round pdf-btn">
-                <i class="fas fa-download"></i> PDF
-            </button>
+            <a href="/assets/StephanieRentfrow2022Resume_NoPhone.pdf" target="_blank" rel="noreferrer noopener"
+               class="btn btn-primary btn-round pdf-btn">
+                <i class="fas fa-download" aria-hidden="true"></i> PDF
+            </a>
         </div>
     </section>
 
@@ -222,7 +224,6 @@
     </footer>
 </div>
 
-<!--<script src="../node_modules/jquery/dist/jquery.slim.js"></script>-->
 <script src="./js/scripts.min.js"></script>
 </body>
 </html>
